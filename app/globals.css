@@ -1,26 +1,96 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --accent-color: rgb(59, 130, 246);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+::selection {
+  background-color: rgb(224 44 146 / 0.5);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #a6b9ba;
+  accent-color: var(--accent-color);
+  background-color: #1a2124;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0px 24px 0px 24px;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #fafafa;
+    color: #343840;
+    font-weight: 450;
+  }
+}
+
+h1, h2, h3, h4 {
+  line-height: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+h1, h2 {
+  color: #fafbff;
+}
+
+@media (prefers-color-scheme: light) {
+  h1, h2 {
+    color: #02040a;
+  }
+}
+
+
+a {
+  color: #fafbff;
+  text-decoration: underline;
+  text-decoration-skip-ink: auto;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(250, 251, 255, 0.5);
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: light) {
+  a {
+    color: #02040a;
+    text-decoration-color: rgba(2, 4, 10, 0.5);
+    font-weight: 500;
+  }
+}
+
+a:focus,
+a:hover {
+  text-decoration-color: var(--accent-color);
+}
+
+a[href^="http"]:not(:has(img))::after,
+a[href^="mailto"]:not(:has(img))::after {
+  content: "↗";
+  padding-left: 0.2ch;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: #a6b9ba;
+}
+
+a[href^="http"]:not(:has(img)):hover::after,
+a[href^="mailto"]:not(:has(img)):hover::after {
+  color: var(--accent-color);
+}
+
+time {
+  letter-spacing: 0 !important;
+  font-feature-settings: "ss01" 1;
 }
