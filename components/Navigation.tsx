@@ -25,7 +25,9 @@ export function AsideNavigation() {
       <nav className="flex flex-col items-start" style={{ gap: "0" }}>
         {navLinks.map((link) => (
           <AnimatedElement key={link.href} delay={link.delay}>
-            <a href={link.href}>{link.label}</a>
+            <a href={link.href} style={{ whiteSpace: "nowrap" }}>
+              {link.label}
+            </a>
           </AnimatedElement>
         ))}
       </nav>

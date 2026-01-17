@@ -28,7 +28,7 @@ export function Section({
         </h2>
       </AnimatedElement>
       <div
-        className="grid grid-cols-[1fr_3fr] md:gap-x-12"
+        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] md:gap-x-12"
         style={{ gap: "24px 24px", rowGap: gap }}
       >
         {children}
@@ -49,7 +49,7 @@ export function ContentItem({ label, children, delay }: ContentItemProps) {
       {label && (
         <AnimatedElement delay={delay}>
           <div
-            className="col-start-1"
+            className="md:col-start-1"
             style={{
               color: "#a2acaa",
               fontVariantNumeric: "tabular-nums",
@@ -64,7 +64,7 @@ export function ContentItem({ label, children, delay }: ContentItemProps) {
       )}
       <AnimatedElement
         delay={delay}
-        className="col-start-2 flex flex-col gap-2"
+        className="md:col-start-2 flex flex-col gap-2"
       >
         {children}
       </AnimatedElement>

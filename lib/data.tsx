@@ -67,8 +67,8 @@ export const sectionsData: SectionData[] = [
     ],
   },
   {
-    id: "work-experience",
-    title: "Work Experience",
+    id: "work",
+    title: "Work",
     content: [
       {
         label: "2021 – Now",
