@@ -1,96 +1,156 @@
 @import "tailwindcss";
 
-:root {
-  --accent-color: rgb(59, 130, 246);
-}
+@layer base {
+  :root {
+    --accent-color: oklch(76.9% 0.188 70.08)
+    --color-primary: #3b82f6;
+    --color-text-primary: #fafbff;
+    --color-text-secondary: #a6b9ba;
+    --color-text-muted: #a2acaa;
+    --color-text-subtitle: #4D595B;
+    --color-text-description: #343840;
+    --color-bg-primary: #1a2124;
+    --color-bg-light: #fafafa;
+    --color-bg-default: #02040a;
+    --color-border-muted: #a2acaa;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    --font-size-body: 14.5px;
+    --font-size-label: 13px;
+    --line-height-base: 1.55;
+    --letter-spacing-label: 0.03ch;
+    --padding-body-x: 24px;
+    --max-width-content: 720px;
+  }
 
-::selection {
-  background-color: rgb(224 44 146 / 0.5);
-}
+  * {
+    @apply m-0 p-0 box-border;
+  }
 
-body {
-  font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 14.5px;
-  line-height: 1.55;
-  color: #a6b9ba;
-  accent-color: var(--accent-color);
-  background-color: #1a2124;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0px 24px 0px 24px;
-}
+  ::selection {
+    @apply bg-amber-600/60;
+  }
 
-@media (prefers-color-scheme: light) {
   body {
-    background-color: #fafafa;
-    color: #343840;
-    font-weight: 450;
+    @apply font-[ui-rounded,-apple-system,BlinkMacSystemFont,'Segoe_UI',Roboto,Helvetica,Arial,sans-serif]
+           antialiased mx-auto;
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-base);
+    color: var(--color-text-secondary);
+    background-color: var(--color-bg-primary);
+    max-width: var(--max-width-content);
+    padding: 0 var(--padding-body-x);
+    accent-color: var(--accent-color);
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
-}
 
-h1, h2, h3, h4 {
-  line-height: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-}
+  @media (prefers-color-scheme: light) {
+    body {
+      background-color: var(--color-bg-light);
+      color: var(--color-bg-default);
+      @apply font-[450];
+    }
+  }
 
-h1, h2 {
-  color: #fafbff;
-}
+  h1, h2, h3, h4 {
+    line-height: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+  }
 
-@media (prefers-color-scheme: light) {
   h1, h2 {
-    color: #02040a;
+    color: var(--color-text-primary);
   }
-}
 
+  @media (prefers-color-scheme: light) {
+    h1, h2 {
+      color: var(--color-bg-default);
+    }
+  }
 
-a {
-  color: #fafbff;
-  text-decoration: underline;
-  text-decoration-skip-ink: auto;
-  text-underline-offset: 2px;
-  text-decoration-color: rgba(250, 251, 255, 0.5);
-  cursor: pointer;
-}
-
-@media (prefers-color-scheme: light) {
   a {
-    color: #02040a;
-    text-decoration-color: rgba(2, 4, 10, 0.5);
-    font-weight: 500;
+    @apply underline [text-decoration-skip-ink:auto]
+           underline-offset-2 cursor-pointer;
+    color: var(--color-text-primary);
+    text-decoration-color: var(--color-text-primary)  ;
+  }
+
+  @media (prefers-color-scheme: light) {
+    a {
+      color: var(--color-bg-default);
+      text-decoration-color: var(--color-bg-default);
+      @apply font-medium;
+    }
+  }
+
+  a:focus,
+  a:hover {
+    text-decoration-color: var(--accent-color);
+  }
+
+  a[href^="http"]:not(:has(img))::after,
+  a[href^="mailto"]:not(:has(img))::after {
+    content: "↗";
+    padding-left: 0.2ch;
+    @apply text-[0.7em] font-semibold;
+    color: var(--color-text-secondary);
+  }
+
+  a[href^="http"]:not(:has(img)):hover::after,
+  a[href^="mailto"]:not(:has(img)):hover::after {
+    color: var(--accent-color);
+  }
+
+  time {
+    @apply tracking-[0];
+    font-feature-settings: "ss01" 1;
+  }
+
+  p {
+    color: var(--color-text-secondary);
+  }
+
+  @media (prefers-color-scheme: light) {
+    p {
+      color: var(--color-text-description);
+    }
   }
 }
 
-a:focus,
-a:hover {
-  text-decoration-color: var(--accent-color);
-}
+@layer components {
+  .label-text {
+    @apply tabular-nums;
+    color: var(--color-text-muted);
+    font-size: var(--font-size-label);
+    letter-spacing: var(--letter-spacing-label);
+    line-height: var(--line-height-base);
+  }
 
-a[href^="http"]:not(:has(img))::after,
-a[href^="mailto"]:not(:has(img))::after {
-  content: "↗";
-  padding-left: 0.2ch;
-  font-size: 0.7em;
-  font-weight: 600;
-  color: #a6b9ba;
-}
+  .subtitle-text {
+    @apply tabular-nums;
+    color: var(--color-text-subtitle);
+    font-size: var(--font-size-label);
+    letter-spacing: var(--letter-spacing-label);
+  }
 
-a[href^="http"]:not(:has(img)):hover::after,
-a[href^="mailto"]:not(:has(img)):hover::after {
-  color: var(--accent-color);
-}
+  .divider-line {
+    @apply block border-none my-8 h-px;
+    background-color: var(--color-border-muted);
+  }
 
-time {
-  letter-spacing: 0 !important;
-  font-feature-settings: "ss01" 1;
+  .description-text {
+    color: var(--color-text-description);
+  }
+
+  @media (prefers-color-scheme: light) {
+    .description-text {
+      color: var(--color-text-description);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .description-text {
+      color: var(--color-text-secondary);
+    }
+  }
 }

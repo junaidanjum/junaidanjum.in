@@ -18,21 +18,15 @@ export function Section({
   children,
   delay = 4,
   className = "",
-  gap = "32px",
 }: SectionProps) {
   return (
-    <section className={`${className} `} style={{ marginTop: "64px" }}>
+    <section className={`${className} mt-16`}>
       <AnimatedElement delay={delay}>
-        <h2 id={id} style={{ marginBottom: "24px" }}>
+        <h2 id={id} className="mb-6 scroll-m-10">
           {title}
         </h2>
       </AnimatedElement>
-      <div
-        className="grid grid-cols-1 md:grid-cols-[1fr_3fr] md:gap-x-12"
-        style={{ gap: "24px 24px", rowGap: gap }}
-      >
-        {children}
-      </div>
+      <div className="grid grid-cols-1 gap-10">{children}</div>
     </section>
   );
 }
@@ -45,21 +39,10 @@ export interface ContentItemProps {
 
 export function ContentItem({ label, children, delay }: ContentItemProps) {
   return (
-    <>
+    <div className="grid grid-cols-1 md:grid-cols-[1fr_3fr] md:gap-x-12 gap-4 md:gap-10">
       {label && (
         <AnimatedElement delay={delay}>
-          <div
-            className="md:col-start-1"
-            style={{
-              color: "#a2acaa",
-              fontVariantNumeric: "tabular-nums",
-              fontSize: "13px",
-              letterSpacing: "0.03ch",
-              lineHeight: "1.55",
-            }}
-          >
-            {label}
-          </div>
+          <div className="md:col-start-1 label-text">{label}</div>
         </AnimatedElement>
       )}
       <AnimatedElement
@@ -68,6 +51,6 @@ export function ContentItem({ label, children, delay }: ContentItemProps) {
       >
         {children}
       </AnimatedElement>
-    </>
+    </div>
   );
 }

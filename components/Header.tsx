@@ -4,10 +4,7 @@ import { AnimatedElement } from "@/components/AnimatedElement";
 
 export function Header() {
   return (
-    <header
-      className="grid grid-cols-[44px_1fr] gap-3 font-[450]"
-      style={{ paddingTop: "68px", paddingBottom: "24px" }}
-    >
+    <header className="grid grid-cols-[44px_1fr] gap-3 font-[450] pt-17 pb-6">
       <AnimatedElement delay={2.4}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -24,7 +21,7 @@ export function Header() {
           <h1 className="fn">Junaid Anjum</h1>
         </AnimatedElement>
         <AnimatedElement delay={1}>
-          <p>
+          <p className="description-text">
             <span className="title">Frontend Product Engineer</span> based in{" "}
             <span className="locality">Srinagar</span>,{" "}
             <span className="country-name">Kashmir</span>.

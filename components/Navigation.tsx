@@ -22,31 +22,19 @@ const socialLinks = [
 export function AsideNavigation() {
   return (
     <aside className="w-24 fixed top-24 left-12 hidden lg:block">
-      <nav className="flex flex-col items-start" style={{ gap: "0" }}>
+      <nav className="flex flex-col items-start gap-0">
         {navLinks.map((link) => (
           <AnimatedElement key={link.href} delay={link.delay}>
-            <a href={link.href} style={{ whiteSpace: "nowrap" }}>
+            <a href={link.href} className="whitespace-nowrap">
               {link.label}
             </a>
           </AnimatedElement>
         ))}
       </nav>
       <AnimatedElement delay={3}>
-        <hr
-          style={{
-            display: "block",
-            border: "none",
-            margin: "32px 0",
-            height: "1px",
-            backgroundColor: "#a2acaa",
-          }}
-        />
+        <hr className="divider-line" />
       </AnimatedElement>
-      <nav
-        aria-label="Social"
-        className="flex flex-col items-start"
-        style={{ gap: "0" }}
-      >
+      <nav aria-label="Social" className="flex flex-col items-start gap-0">
         {socialLinks.map((link) => (
           <AnimatedElement key={link.href} delay={link.delay}>
             <a href={link.href}>{link.label}</a>

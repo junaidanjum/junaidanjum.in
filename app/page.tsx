@@ -32,7 +32,7 @@ export default function Home() {
           </Section>
         ))}
       </main>
-      <footer style={{ marginTop: 92, marginBottom: 0 }}></footer>
+      <footer className="mt-23 mb-0"></footer>
     </>
   );
 }

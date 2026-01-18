@@ -15,13 +15,6 @@ export interface ContentCardProps {
   };
 }
 
-const hgroupPStyle = {
-  color: "#4D595B",
-  fontSize: "13px",
-  letterSpacing: "0.03ch",
-  marginTop: 0,
-};
-
 export function ContentCard({
   title,
   subtitle,
@@ -44,15 +37,15 @@ export function ContentCard({
           <h3>
             <a href={href}>{title}</a>
           </h3>
-          {subtitle && <p style={hgroupPStyle}>{subtitle}</p>}
+          {subtitle && <p className="subtitle-text">{subtitle}</p>}
         </hgroup>
       ) : (
         <hgroup>
-          <h3 className="text-[#02040a] dark:text-[#fafbff]">{title}</h3>
-          {subtitle && <p style={hgroupPStyle}>{subtitle}</p>}
+          <h3>{title}</h3>
+          {subtitle && <p className="subtitle-text">{subtitle}</p>}
         </hgroup>
       )}
-      {description && <p>{description}</p>}
+      {description && <p className="description-text">{description}</p>}
     </>
   );
 }
