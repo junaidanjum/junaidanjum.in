@@ -179,38 +179,19 @@ export const sectionsData: SectionData[] = [
             title="Now"
             subtitle="Current Work & Projects"
             description="A brief overview of my current work and projects, updated regularly to reflect what I'm focusing on."
-            href="https://winterstack.vercel.app/blog/now"
+            href="/writing/now"
           />
         ),
       },
-      {
-        children: (
-          <ContentCard
-            title="Books I read in 2025"
-            subtitle="Reading List"
-            description="A list of books spanning various genres and topics, documenting my reading journey throughout the year."
-            href="https://winterstack.vercel.app/blog/books-in-2025"
-          />
-        ),
-      },
+
       {
         label: "2024",
-        children: (
-          <ContentCard
-            title="What Actually is a Pull Request?"
-            subtitle="Development Guide"
-            description="A simple explanation of Pull Requests for beginners, and why the name is so confusing."
-            href="https://winterstack.vercel.app/blog/what-is-a-pull-request"
-          />
-        ),
-      },
-      {
         children: (
           <ContentCard
             title="The endless loop of app development"
             subtitle="Development Insights"
             description="How a simple app grows legs and arms and becomes a monster - lessons learned from the development trenches."
-            href="https://winterstack.vercel.app/blog/endless-loop"
+            href="/writing/endless-loop"
           />
         ),
       },
@@ -260,7 +241,7 @@ export const sectionsData: SectionData[] = [
         children: (
           <>
             <p>
-              This website is a carefully curated clone (ccc) of{" "}
+              This website is a Next.js version of{" "}
               <a href="https://robb.is">Robb Bonke</a>
               &apos;s portfolio. I thank Robb for the inspiration and design
               choices.

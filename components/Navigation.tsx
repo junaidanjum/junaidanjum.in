@@ -4,7 +4,7 @@ import { AnimatedElement } from "@/components/AnimatedElement";
 import { sectionsData } from "@/lib/data";
 
 const navLinks = sectionsData.map((section, index) => ({
-  href: `#${section.id}`,
+  href: `/#${section.id}`,
   label: section.title,
   delay: 1 + index * 0.2,
 }));
