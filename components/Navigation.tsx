@@ -12,7 +12,7 @@ const navLinks = sectionsData.map((section, index) => ({
 const socialLinks = [
   { href: "https://github.com/junaidanjum", label: "GitHub", delay: 3.8 },
   {
-    href: "https://bsky.app/profile/winterstack.bsky.social",
+    href: "https://bsky.app/profile/junaidanjum.bsky.social",
     label: "Bluesky",
     delay: 3.6,
   },

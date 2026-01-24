@@ -226,7 +226,9 @@ export const sectionsData: SectionData[] = [
               build systems, just modern web technologies.
             </p>
             <p>
-              <a href="https://github.com/junaidanjum">View Source</a>
+              <a href="https://github.com/junaidanjum/junaidanjum.in">
+                View Source
+              </a>
             </p>
           </>
         ),
