@@ -41,4 +41,4 @@ pnpm dev
 
 
 
-For questions, contact [junaidanjum@live.com](mailto:junaidanjum@live.com)
+For questions, contact [hello@junaidanjum.in](mailto:hello@junaidanjum.in)

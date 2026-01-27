@@ -16,7 +16,7 @@ const socialLinks = [
     label: "Bluesky",
     delay: 3.6,
   },
-  { href: "mailto:junaidanjum@live.com", label: "Mail", delay: 4 },
+  { href: "mailto:hello@junaidanjum.in", label: "Mail", delay: 4 },
 ];
 
 export function AsideNavigation() {
