@@ -225,11 +225,11 @@ export const sectionsData: SectionData[] = [
               smooth animations powered by Motion. No complex frameworks or
               build systems, just modern web technologies.
             </p>
-            {/* <p>
+            <p>
               <a href="https://github.com/junaidanjum/junaidanjum.in">
                 View Source
               </a>
-            </p> */}
+            </p>
           </>
         ),
       },
