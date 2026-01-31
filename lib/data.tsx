@@ -137,7 +137,17 @@ export const sectionsData: SectionData[] = [
     title: "Side Projects",
     content: [
       {
-        label: "2023 – Now",
+        label: "2025",
+        children: (
+          <ContentCard
+            title="shadcn-lab"
+            description="Zero-config in-app playground for shadcn/ui components."
+            href="https://github.com/junaidanjum/shadcn-lab"
+          />
+        ),
+      },
+      {
+        label: "2024",
         children: (
           <ContentCard
             title="BetterLife"
@@ -147,7 +157,7 @@ export const sectionsData: SectionData[] = [
         ),
       },
       {
-        label: "2022 – Now",
+        label: "2024",
         children: (
           <ContentCard
             title="useTextHightlight()"
@@ -157,7 +167,7 @@ export const sectionsData: SectionData[] = [
         ),
       },
       {
-        label: "2022 – Now",
+        label: "2024",
         children: (
           <ContentCard
             title="FumaDocs"
